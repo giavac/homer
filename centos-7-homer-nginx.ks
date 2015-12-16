@@ -2,6 +2,7 @@ install
 text
 sshpw --username=root setup --plaintext
 url --url=http://mirror.centos.org/centos/7/os/x86_64/
+repo --name=bintray--sipcapture-homer-yum --baseurl=http://dl.bintray.com/sipcapture/homer-yum
 
 keyboard us
 lang en_US.UTF8
@@ -31,14 +32,17 @@ bootloader --location=mbr
 
 %packages
 @Core
+homer-nginx
 
 %end
 
-%post —log=/var/log/ks-post.log
+%post —log=/mnt/sysimage/var/log/ks-post.log
 
-mkdir -p /root/.ssh
+mkdir -p /mnt/sysimage/root/.ssh
 
 systemctl enable sshd.service
+
+curl https://bintray.com/sipcapture/homer-yum/rpm -o /etc/yum.repos.d/sipcapture.repo
 
 %end
 
