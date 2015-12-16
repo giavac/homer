@@ -2,7 +2,15 @@ install
 text
 sshpw --username=root setup --plaintext
 url --url=http://mirror.centos.org/centos/7/os/x86_64/
+repo --name=updates --baseurl=http://mirror.centos.org/centos/7/updates/x86_64/
+repo --name=extras --baseurl=http://mirror.centos.org/centos/7/extras/x86_64/
+repo --name=plus --baseurl=http://mirror.centos.org/centos/7/centosplus/x86_64/
+repo --name=epel --mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=epel-7&arch=x86_64
 repo --name=bintray--sipcapture-homer-yum --baseurl=http://dl.bintray.com/sipcapture/homer-yum
+repo --name=mysql-connectors-community --baseurl=http://repo.mysql.com/yum/mysql-connectors-community/el/7/x86_64/
+repo --name=mysql-tools-community --baseurl=http://repo.mysql.com/yum/mysql-tools-community/el/7/x86_64/
+repo --name=mysql57-community --baseurl=http://repo.mysql.com/yum/mysql57-community/el/7/x86_64/
+repo --name=home_kamailio_v4.3.x-rpms --baseurl=http://download.opensuse.org/repositories/home:/kamailio:/v4.3.x-rpms/CentOS_7/
 
 keyboard us
 lang en_US.UTF8
@@ -32,6 +40,8 @@ bootloader --location=mbr
 
 %packages
 @Core
+epel-release
+mysql-community-release
 homer-nginx
 
 %end
@@ -43,6 +53,7 @@ mkdir -p /mnt/sysimage/root/.ssh
 systemctl enable sshd.service
 
 curl https://bintray.com/sipcapture/homer-yum/rpm -o /etc/yum.repos.d/sipcapture.repo
+curl http://download.opensuse.org/repositories/home:/kamailio:/v4.3.x-rpms/CentOS_7/home:kamailio:v4.3.x-rpms.repo -o /etc/yum.repos.d/kamailio.repo
 
 %end
 
