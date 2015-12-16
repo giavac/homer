@@ -9,7 +9,7 @@ repo --name=epel --mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=ep
 repo --name=bintray--sipcapture-homer-yum --baseurl=http://dl.bintray.com/sipcapture/homer-yum
 repo --name=mysql-connectors-community --baseurl=http://repo.mysql.com/yum/mysql-connectors-community/el/7/x86_64/
 repo --name=mysql-tools-community --baseurl=http://repo.mysql.com/yum/mysql-tools-community/el/7/x86_64/
-repo --name=mysql57-community --baseurl=http://repo.mysql.com/yum/mysql57-community/el/7/x86_64/
+repo --name=mysql57-community --baseurl=http://repo.mysql.com/yum/mysql-5.7-community/el/7/x86_64/
 repo --name=home_kamailio_v4.3.x-rpms --baseurl=http://download.opensuse.org/repositories/home:/kamailio:/v4.3.x-rpms/CentOS_7/
 
 keyboard us
