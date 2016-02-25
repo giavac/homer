@@ -9,7 +9,7 @@
 
 [submodule "homer-api"]
 	path = homer-api
-	url = https://github.com/sipcapture/homer-api.git
+	url = git@github.com:giavac/homer-api.git
 	branch = master
 [submodule "homer-ui"]
 	path = homer-ui
